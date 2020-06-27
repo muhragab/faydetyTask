@@ -24,7 +24,7 @@ class AuthController extends Controller
             $avatar = 'user/avatar/' . $image;
         }
         $user = User::create(array_merge($input, ['avatar' => $avatar]));
-        return $this->sendResponse($user, '');
+        return $this->sendResponse($user, '', 201);
     }
 
     public function login(LoginRequest $request)

@@ -6,9 +6,9 @@ use App\Custom\ResponseUtil;
 
 trait ResponseCustom
 {
-    public function sendResponse($result, $message)
+    public function sendResponse($result, $message, $status = 200)
     {
-        return response()->json(ResponseUtil::makeResponse($message, $result));
+        return response()->json(ResponseUtil::makeResponse($message, $result), $status);
     }
 
     public function sendError($error, $code = 400)
